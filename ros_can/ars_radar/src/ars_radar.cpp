@@ -5,7 +5,12 @@ using namespace std;
 
 bool ArsRadar::init()
 {
-	ros::NodeHandle nh;                                                                          // 创建节点句柄实例
+	ros::NodeHandle nh; // 创建节点句柄实例
+	ros::NodeHandle nh_private("~");
+	
+	string to_can_topic   = nh_private.param<std::string>("to_can_topic","/to_usbcan");
+	string from_can_topic = nh_private.param<std::string>("from_can_topic","/from_usbcan");
+	
 	pub_cloud_    = nh.advertise<sensor_msgs::PointCloud2>("/ars_cloud",2);                      // 发布名为‘’ 话题  rviz里面显示
 	sub_can_      = nh.subscribe("from_can_topic",100,&ArsRadar::canMsg_callback, this);         // 订阅从CAN分析仪里面发来的话题（里面包含各种数据帧的信息）
 	
