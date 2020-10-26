@@ -12,7 +12,7 @@ bool ArsRadar::init()
 	string from_can_topic = nh_private.param<std::string>("from_can_topic","/from_usbcan");
 	
 	pub_cloud_    = nh.advertise<sensor_msgs::PointCloud2>("/ars_cloud",2);                      // 发布名为‘’ 话题  rviz里面显示
-	sub_can_      = nh.subscribe("from_can_topic",100,&ArsRadar::canMsg_callback, this);         // 订阅从CAN分析仪里面发来的话题（里面包含各种数据帧的信息）
+	sub_can_      = nh.subscribe(from_can_topic,100,&ArsRadar::canMsg_callback, this);         // 订阅从CAN分析仪里面发来的话题（里面包含各种数据帧的信息）
 	
 	ROS_INFO("ars radar initialization complete.");													   
 	return true;
