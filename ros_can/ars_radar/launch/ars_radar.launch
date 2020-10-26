@@ -10,6 +10,8 @@
 		
 		<!--from_can_topic can分析仪发送的话题-->
 		<!--to_can_topic   can分析仪接收的话题-->
+		<param name ="from_can_topic"  type ="string"  value="/from_can_topic"/>
+		<param name ="to_can_topic"    type ="string"  value="/to_can_topic"/>
 		
 	<!-- 启动数据读取节点-->
 	</node>	
