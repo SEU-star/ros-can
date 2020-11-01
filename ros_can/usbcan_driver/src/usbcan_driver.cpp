@@ -116,7 +116,7 @@ void UsbCanDriver::frameArray_callback(const can_msgs::FrameArray::ConstPtr& msg
 		if(mFrameId[channel] != msgs->header.frame_id)
 			continue;
 
-		//ROS_INFO("callback %d", msgs->frames.size());
+//		ROS_INFO("callback %d", msgs->frames.size());
 		for(int i=0; i< msgs->frames.size(); ++i)
 		{
 			if(msgs->frames[i].len ==0) 

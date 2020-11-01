@@ -44,10 +44,20 @@ private:
 	
     void canMsg_callback(const can_msgs::FrameArray::ConstPtr& msg);
 	void parse_msg(const can_msgs::Frame &frame);
-	void pubBoundingBoxArray();
+
 
     ros::Subscriber sub_can_;
+	ros::Publisher  pub_can_;
+	ros::Publisher  pub_objects_;
 	ros::Publisher  pub_cloud_;
+	
+	
+	can_msgs::ObjectArray ars_objects_;
+	can_msgs::Object  ars_object_;
+	
+	pcl::PointCloud<pcl::PointXYZRGB> cloud;                                                   
+	sensor_msgs::PointCloud2 output;
+	pcl::PointXYZRGB point; 
 	
 //	jsk_recognition_msgs::BoundingBoxArray bbox_array_;
 //	jsk_recognition_msgs::BoundingBox      bbox_;

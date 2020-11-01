@@ -12,6 +12,8 @@ add_message_files(
 	FILES
 	Frame.msg
 	FrameArray.msg
+	Object.msg
+	ObjectArray.msg
 )
 
 

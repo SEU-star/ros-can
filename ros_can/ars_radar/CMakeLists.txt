@@ -32,8 +32,13 @@ include_directories(
 
 link_directories(lib)
 
+
+
+
+
+
+#add_executable(ars_radar_node src/ars_radar_node.cpp)
+#target_link_libraries(ars_radar_node ${catkin_LIBRARIES})
+
 add_executable(ars_radar src/ars_radar.cpp)
 target_link_libraries(ars_radar ${catkin_LIBRARIES})
-
-
-
